@@ -15,7 +15,7 @@ var TableManaged = function () {
                     [5, 15, 20, "全部"]
                 ],
                 // set the initial value
-                "iDisplayLength": 5,
+                "iDisplayLength": 15,
                 "sPaginationType": "bootstrap",
                 "oLanguage": {
                     "sLengthMenu": "_MENU_ 条记录（单页显示）",

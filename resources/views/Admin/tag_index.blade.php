@@ -88,7 +88,7 @@
 
                                         <td>
 
-                                            <a href="#" class="btn mini green"><i class="icon-eye-open"></i> 查看</a>
+                                            <a href="{{route('tag',$tag->id)}}" class="btn mini green"><i class="icon-eye-open"></i> 查看</a>
 
                                         </td>
 

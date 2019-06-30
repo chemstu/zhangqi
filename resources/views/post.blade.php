@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-10">
                     <div class="post-meta">
-                        <a class="post-category cat-2" href="category.html">{{$post->category['name']}}</a>
+                        <a class="post-category cat-2" href="{{route('category',$post->category['id'])}}">{{$post->category['name']}}</a>
                         <span class="post-date">{{$post->updated_at->toDateString()}}</span>
                     </div>
                     <h1>{{$post->title}}</h1>

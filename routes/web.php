@@ -15,6 +15,8 @@ Route::get('/', 'PostController@index')->name('homepage');
 
 Route::get('/post/{post}', 'PostController@post')->name('post');
 
+Route::get('/category/{category}', 'PostController@category')->name('category');
+
 Route::get('/tag/{tag}', 'PostController@tag')->name('tag');
 
 Route::get('/contact', 'PostController@contact')->name('contact');
@@ -27,6 +29,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin'], function (
     Route::resource('category', 'CategoryController');
     Route::resource('post', 'PostController');
     Route::post('/editor/upload_img','PostController@upload_img');
+
+    Route::any('upload','FileController@upload')->name('upload');
 });
 
 

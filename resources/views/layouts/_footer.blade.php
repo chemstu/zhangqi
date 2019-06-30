@@ -6,7 +6,7 @@
             <div class="col-md-5">
                 <div class="footer-widget">
                     <div class="footer-logo">
-                        <a href="index.html" class="logo"><img src="./img/logo.png" alt=""></a>
+                        <a href="index.html" class="logo"><img src="{{asset('front/img/logo.png')}}" alt=""></a>
                     </div>
                     <ul class="footer-nav">
                         <li>粤公网安备 44122502000005号</li>
@@ -69,3 +69,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> 版�
     </div>
     <!-- /container -->
 </footer>
+
+<script src="{{asset('front/js/jquery.min.js')}}"></script>
+<script src="{{asset('front/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('front/js/main.js')}}"></script>

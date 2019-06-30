@@ -23,6 +23,15 @@ class PostController extends Controller
         return view('post',compact('post','tags','categories'));
     }
 
+
+    public function  category(Category $category){
+        $tags=Tag::all();
+        $categories=Category::all();
+        $posts=$category->posts;
+
+        return view('index',compact('posts','tags','categories'));
+    }
+
     public function  tag(Tag $tag){
         $tags=Tag::all();
         $categories=Category::all();

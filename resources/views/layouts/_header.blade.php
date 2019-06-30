@@ -14,7 +14,7 @@
                 <ul class="nav-menu nav navbar-nav">
                     <li><a href="{{route('homepage')}}">首页</a></li>
                     @foreach($categories as $category)
-                        <li  class="{{$category->color}}"><a href="" >{{$category->name}}</a></li>
+                        <li  class="{{$category->color}}"><a href="{{route('category',$category->id)}}" >{{$category->name}}</a></li>
                     @endforeach
                     </ul>
                 <!-- /nav -->

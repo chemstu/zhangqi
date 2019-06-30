@@ -43,7 +43,7 @@ class CategoryController extends Controller
         $tag->fill($request->all());
         $tag->save();
         Toastr::success('分类添加成功', 'OK');
-        return redirect(route('admin.tag.index'));
+        return redirect(route('admin.category.index'));
     }
 
     /**
@@ -93,6 +93,6 @@ class CategoryController extends Controller
     {
         Category::where('id',$id)->delete();
         Toastr::success('删除成功', 'OK');
-        return redirect(route('admin.category.index'));
+        return redirect() ->back();
     }
 }

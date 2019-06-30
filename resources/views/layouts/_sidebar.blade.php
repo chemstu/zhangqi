@@ -13,7 +13,7 @@
     <div class="category-widget">
         <ul>
             @foreach($categories as $category)
-                <li><a href="" class="{{$category->color}}">{{$category->name}}<span>340</span></a></li>
+                <li><a href="{{route('category',$category->id)}}" class="{{$category->color}}">{{$category->name}}<span>340</span></a></li>
             @endforeach
          </ul>
     </div>

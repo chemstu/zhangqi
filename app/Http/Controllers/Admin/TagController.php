@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\TagRequest;
+use App\Models\Post_tag;
 use App\Models\Tag;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
@@ -91,8 +92,13 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        Tag::where('id',$id)->delete();
-        Toastr::success('删除成功', 'OK');
-        return redirect(route('admin.tag.index'));
+        if(Post_tag::where('tag_id',$id)->count()){
+           Toastr::error('删除不成功', 'OK');
+        }else{
+            Tag::where('id',$id)->delete();
+            Toastr::success('删除成功', 'OK');
+        }
+       return redirect() ->back();
+
     }
 }

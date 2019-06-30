@@ -64,7 +64,7 @@
 
                                     </th>
 
-                                    <th>标签名称</th>
+                                    <th>分类名称</th>
 
                                     <th >查看</th>
 
@@ -88,7 +88,7 @@
 
                                         <td>
 
-                                            <a href="#" class="btn mini green"><i class="icon-eye-open"></i> 查看</a>
+                                            <a href="{{route('category',$category->id)}}" target="_blank" class="btn mini green"><i class="icon-eye-open"></i> 查看</a>
 
                                         </td>
 

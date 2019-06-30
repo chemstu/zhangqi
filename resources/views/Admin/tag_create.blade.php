@@ -44,7 +44,7 @@
 
                     <!-- BEGIN FORM-->
 
-                    <form action="{{route('admin.tag.store')}}"  method="post"  accept-charset="UTF-8" class="form-horizontal">
+                    <form action="{{route('admin.tag.store')}}"  method="post"  id="tag_create"accept-charset="UTF-8" class="form-horizontal">
 
                         @csrf
 
@@ -55,6 +55,30 @@
                             <div class="controls">
 
                                 <input type="text"  required="required" name="name" class=" m-wrap" >
+
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+
+                            <label class="control-label">缩略图</label>
+
+                            <div class="controls">
+                                <input type="file" name="myfile" id="myfile" onchange="javascript:submitFile();" style="display: none">
+                                <input type="text"  name="image"  class="m-wrap medium" />
+                                <a class="btn btn-small btn-success" onclick="javascript:uploadmyFile();">上传</a>
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+
+                            <label class="control-label"></label>
+
+                            <div class="controls">
+
+                                <img id="image" src="" style="max-width:350px;max-height: 100px; "/>
 
                             </div>
 
@@ -94,5 +118,39 @@
     <script src="{{asset('vendors/parsleyjs/dist/i18n/zh_cn.js')}}"></script>
     <script>
         $('#form').parsley();
+    </script>
+
+    <script src="{{asset("js/jquery.form.min.js")}}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function uploadmyFile()
+        {
+
+            $("#myfile").click();
+        }
+
+        function submitFile()
+        {
+            $("#tag_create").ajaxSubmit({
+
+                url: "{{url('admin/upload')}}",
+                type: "post",
+                dataType:'json',
+                success: function (data)
+                {
+
+                    $('input[name=image]').val(data.filePath)
+                    $('#image').attr('src',data.filePath+'!270160')
+
+                },
+                error: function (data)
+                {
+                    //var msg = eval(data);
+                    alert("出错");//msg.errCode
+                }
+            })
+        }
+
     </script>
 @endsection
